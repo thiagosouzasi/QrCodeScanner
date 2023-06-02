@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QrCodeScanner</string>
+    <string name="login">Login</string>
+    <string name="login_placeholder">Informe seu login</string>
+    <string name="password">Senha</string>
+    <string name="password_placeholder">Informe sua senha</string>
+    <string name="do_login">Entrar</string>
+</resources>
