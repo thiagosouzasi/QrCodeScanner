@@ -32,19 +32,19 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.edPassword);
         loginButton = findViewById(R.id.btLogin);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleValidateData();
-            }
-        });
     }
 
     private void handleLogin(){
 
     }
 
-    private boolean handleValidateData(){
+
+
+    private void showToast(String message){
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+    }
+
+    public boolean handleValidateData(View view) {
         if(login.getText().toString().trim().equals("")){
             showToast("Informe seu login para continuar");
             return false;
@@ -56,9 +56,5 @@ public class Login extends AppCompatActivity {
         }
 
         return true;
-    }
-
-    private void showToast(String message){
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 }
