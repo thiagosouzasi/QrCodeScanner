@@ -1,10 +1,11 @@
 package com.example.qrcodescanner;
 
+
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import androidx.core.app.ActivityCompat;
 
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -19,7 +20,7 @@ import com.google.zxing.ResultPoint;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
-
+import android.Manifest;
 import java.util.List;
 
 
@@ -43,13 +44,9 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        handleGetPermissions();
         scanButton  = view.findViewById(R.id.btOpenQrScenner);
         barcodeView = view.findViewById(R.id.barcodeview);
-
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
-//        }
         barcodeView.decodeContinuous(callback);
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +56,16 @@ public class HomeFragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void handleGetPermissions(){
+        try {
+            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, 1);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void handleToggleVisibilityQrCodeScan (){

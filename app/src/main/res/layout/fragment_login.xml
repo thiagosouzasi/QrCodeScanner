@@ -29,6 +29,8 @@
             android:id="@+id/imageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:contentDescription="@string/qr_description"
+            app:srcCompat="@drawable/qrcode"
             tools:srcCompat="@drawable/qrcode" />
 
         <TextView
