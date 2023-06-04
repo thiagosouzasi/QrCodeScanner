@@ -17,11 +17,11 @@ Para desenvolvimento foi utilizada a lib [ZXing](https://github.com/zxing/zxing)
 
 ## Dados de Autenticação
 
-Os Dados de autenticação para login no App foram configurados como Login: Admin e Password: Admin<br><br>
+Os Dados de autenticação para login no App foram configurados como Login: Admin e Password: Admin.<br><br>
 
 ## Pré-Requisitos
 
-Para o correto funcionameto do App faz-se necessário a concessão da permissão para acesso a câmera do dispositivo, conforme exibino em um dos prints da tela do App abaixo. <br><br>
+Para o correto funcionameto do App faz-se necessário a concessão da permissão para acesso a câmera do dispositivo, conforme exibido em um dos prints da tela do App abaixo. <br><br>
 
 
 
